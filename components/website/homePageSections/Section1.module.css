@@ -1,0 +1,26 @@
+/* Scroller styling */
+.scroller {
+  height: 1em;
+  line-height: 1.2em;
+  position: relative;
+  overflow: hidden;
+  width: 6.5em;
+}
+.scroller > span {
+  position: absolute;
+  top: 0;
+  animation: slide 7s infinite;
+  font-weight: bold;
+}
+@keyframes slide {
+  0%,
+  100% {
+    top: 0;
+  }
+  25% {
+    top: -1.2em;
+  }
+  50% {
+    top: -2.4em;
+  }
+}

@@ -1,0 +1,658 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* <website css */
+/* italic inter bold text */
+.text-gradient {
+  background: linear-gradient(242deg, #012a59 37.99%, #b21450 72.73%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* home page text animation */
+.text-gradient-normal {
+  background: linear-gradient(242deg, #012a59 37.99%, #b21450 72.73%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
+
+/* extra boldness */
+.text-strokeWithGradient {
+  background: linear-gradient(242deg, #012a59 37.99%, #b21450 72.73%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px transparent; /* Adjust the width as needed */
+  /* text-stroke: 2px transparent; */
+}
+
+.text-stroke {
+  background: #2e2e2e;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px transparent;
+}
+
+.text-stroke-1 {
+  background: #2e2e2e;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px transparent;
+}
+
+/* text-stroke-white */
+
+.text-strokeWhite {
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px transparent; /* Adjust the width as needed */
+  /* text-stroke: 2px transparent; */
+}
+
+
+/* .gradient-border {
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 19px;
+
+  border-width: 1.64px;
+  border: double 1.64px transparent;
+  border-style:solid ;
+  
+  background: linear-gradient(white, white) padding-box,
+  linear-gradient(189.02deg, #012A59 5.33%, #B21450 104.18%) border-box;
+  border-image-slice: 1;
+  box-sizing: border-box;
+ 
+} */
+
+.gradient-border {
+  /* Default style without gradient */
+  border: 1px solid rgba(169, 169, 169, 1);
+  border-radius: 19px;
+
+  /* Apply gradient border on hover */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.gradient-border:hover {
+  border: 1.64px solid transparent;
+  border-radius: 19px;
+  /* Gradient border style */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-image-slice: 1;
+  box-sizing: border-box;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(189.02deg, #012A59 5.33%, #B21450 104.18%) border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* .text-gradient-normal {
+  position: relative;
+} */
+
+:root {
+  --text-gradient-normal: linear-gradient(
+    242deg,
+    #012a59 37.99%,
+    #b21450 72.73%
+  );
+}
+
+.extra-bolder {
+  text-shadow:
+    0px 10px,
+    10px 0px,
+    10px 10px;
+}
+
+.gradient-button {
+  background: linear-gradient(94deg, #022a5a 7.71%, #741c54 80.92%);
+  box-shadow: 0 4px 10px rgba(33, 2, 21, 0.1);
+  transition: background 0.9s ease;
+}
+/* .gradient-button:hover {
+  background: linear-gradient(94deg, #8a1566 80.92%, #03357a 7.71%);
+} */
+
+/* .zoom-on-hover {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+   }
+   .zoom-on-hover:hover {
+    transform: scale(1.1);
+   }  */
+/* website css> */
+
+@layer base {
+  :root {
+    --background:  #f7f7f7;
+    --foreground: #000000;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: #012a59;
+    --primary-foreground: #ffffff;
+
+    --secondary: #034a9a;
+    --secondary-foreground: #ffffff;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0, 79%, 54%, 1;
+    --destructive-foreground: 0, 0%, 100%, 1;
+
+    --success: 156, 100%, 36%, 1;
+    --success-foreground: 0, 0%, 100%, 1;
+
+    --border: #e1e1e1;
+    --input: #e1e1e1;
+    --ring: #034a9a;
+
+    --radius: 0.5rem;
+
+    --link: #3790e3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* table {
+    width: 100%;
+  }
+  thead,
+  tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  tbody {
+    display: block;
+    overflow-y: auto;
+    table-layout: fixed;
+  } */
+}
+
+@layer utilities {
+  .custom-gradient {
+    background: linear-gradient(94deg, #022a5a 7.71%, #741c54 80.92%);
+  }
+
+  /* .sidebar-transition {
+    @apply min-w-0 transition-[min-width] duration-500 hover:min-w-[240px] hover:max-w-[240px];
+  }
+
+  .sidebar-item-transition {
+    @apply invisible w-0 opacity-0 transition-[opacity_visibility] duration-500 group-hover:visible group-hover:opacity-100;
+  } */
+
+  .progressbar {
+    width: 100%;
+    padding: 10px 0 5px;
+  }
+
+  .progressbar.steps-2 li {
+    width: 50%;
+  }
+
+  .progressbar li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    color: #5e5e5e;
+  }
+
+  .progressbar li:before {
+    width: 20px;
+    height: 20px;
+    content: "\2713";
+    line-height: 20px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 3px auto;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .progressbar li:after {
+    width: 100%;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: #cdcdcd;
+    top: 10px;
+    left: -50%;
+    z-index: 0;
+  }
+
+  .progressbar li:first-child:after {
+    content: none;
+  }
+
+  .progressbar li.done,
+  .progressbar li.pending {
+    color: #012a59;
+    font-weight: 600;
+  }
+
+  .progressbar li.pending::before {
+    border: 1px solid #012a59;
+    background-color: white;
+    color: white;
+  }
+
+  .progressbar li.done:before {
+    border-color: #012a59;
+    background: #012a59;
+  }
+
+  .progressbar li.done + li:after {
+    background: linear-gradient(90deg, #012a59 50%, #cdcdcd 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    animation: load 0.5s ease-in-out forwards;
+    /* animation-fill-mode: forwards; */
+  }
+
+  .progressbar li::before {
+    background: #d9d9d9;
+    background-size: 60%;
+    color: #d9d9d9;
+  }
+
+  /* @keyframes sidebar-initial-animation {
+    from {
+      @apply visible w-auto opacity-100;
+    }
+    to {
+      @apply sidebar-item-transition sidebar-transition;
+    }
+  } */
+
+  @keyframes load {
+    0% {
+      background-position: 100%;
+    }
+
+    100% {
+      background-position: 0%;
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      margin-left: 0rem;
+    }
+
+    25% {
+      margin-left: 0.5rem;
+    }
+
+    75% {
+      margin-left: -0.5rem;
+    }
+
+    100% {
+      margin-left: 0rem;
+    }
+  }
+
+  .shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+  }
+}
+
+.message {
+  color: white;
+  padding: 12px 20px;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  position: relative;
+}
+
+.message::after {
+  bottom: 0px;
+  right: -5px;
+  border: solid transparent;
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-bottom: 26px solid #202758;
+  border-right: 10px solid transparent;
+}
+
+.my-message {
+  background: #202758;
+}
+
+.other-message {
+  background: #9747ff;
+}
+
+.other-message::after {
+  border-bottom: 36px solid #9747ff;
+  border-left: 20px solid transparent;
+  left: -6px;
+}
+
+.scrolling-container {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  overflow: hidden;
+}
+
+/* commented out for testing, if any issue noticed uncomment it */
+/* @media (min-width: 768px) { */
+.scroll-container::-webkit-scrollbar {
+  width: 4px;
+  position: absolute;
+  z-index: 2;
+}
+
+/* Track */
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  position: absolute;
+}
+
+/* Handle */
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #a4a2a2;
+  border-radius: 8px;
+  position: absolute;
+}
+
+/* Handle on hover */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* } */
+
+.slick-slide > div {
+  margin: 0 8px;
+}
+
+.slick-slide > div:nth-child(1) {
+  margin-left: 0;
+}
+
+.slick-list {
+  margin-right: -8px;
+}
+
+.shadow-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 49;
+}
+
+.centered-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .container-width {
+    width: calc(100% - 240px);
+  }
+
+  .container-height {
+    max-height: calc(100% - 600px);
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.custom-text {
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+
+/* upload video css */
+.dropzone {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #ccc;
+  text-align: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.dropzone p {
+  margin: 0;
+}
+
+.dropzone video {
+  width: 100%;
+  height: auto;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.slick-slide > div {
+  margin: 0 16px;
+}
+
+.slick-list {
+  margin: 0 -16px;
+}
+
+.rdp [aria-hidden="true"] {
+  @apply hidden;
+}
+
+.rdp-vhidden {
+  @apply hidden;
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}
+
+.AccordionChevron.bottom {
+  position: absolute;
+  bottom: 10px;
+  /* Adjust as needed */
+  right: 10px;
+  /* Adjust as needed */
+  transform: rotate(180deg);
+  /* Rotate to point downwards */
+}
+
+.chartjs-render-monitor .chartjs-size-monitor-expand {
+  background: transparent;
+  border: none;
+}
+
+.chartjs-render-monitor .chartjs-size-monitor-shrink {
+  background: transparent;
+  border: none;
+}
+
+.chart-legend {
+  border-radius: 10px;
+  /* Set the border radius for rounded corners */
+  overflow: hidden;
+}
+
+.chart-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chart-legend li {
+  display: inline-block;
+  margin-right: 10px;
+  /* Adjust the spacing between legend items */
+  padding: 5px;
+}
+
+.chart-legend li span {
+  display: inline-block;
+  width: 15px; /* Adjust the width of the color indicator */
+  height: 15px; /* Adjust the height of the color indicator */
+  margin-right: 5px; /* Adjust the spacing between the color indicator and label */
+}
+
+.custom-scrollable::-webkit-scrollbar {
+  width: 10px;
+  background-color: #1b1b1b;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.wrapper {
+  font-size: 16px;
+  font-weight: 500;
+}
+.StepProgress {
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+}
+.StepProgress::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 10px;
+  height: 100%;
+}
+.StepProgress-item {
+  position: relative;
+  counter-increment: list;
+  display: flex;
+  align-items: flex-start;
+}
+.StepProgress-item:not(:last-child) {
+  padding-bottom: 20px;
+}
+.StepProgress-item::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  left: -33px;
+  height: 100%;
+  width: 10px;
+}
+.StepProgress-item::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -37px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #cdcdcd;
+  border-radius: 50%;
+  background-color: #cdcdcd;
+}
+.StepProgress-item.is-done::before {
+  border-left: 2px solid #034a9a;
+}
+.StepProgress-item.is-done::after {
+  content: "";
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #034a9a;
+  background-color: #034a9a;
+}
+.StepProgress-item.current::before {
+  border-left: 2px solid #cdcdcd;
+}
+.StepProgress-item.current::after {
+  width: 10px;
+  height: 10px;
+  left: -37px;
+  font-size: 16px;
+  text-align: center;
+  color: #034a9a;
+  border: 2px solid #034a9a;
+  background-color: #034a9a;
+}
+.StepProgress div {
+  display: flex;
+  align-items: flex-start;
+}
+
